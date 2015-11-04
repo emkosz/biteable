@@ -1,0 +1,19 @@
+<h1>Listing Biteables!</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Amount</th>
+		<th>Description</th>
+	</tr>
+
+	<% @food_items.each do |food_item| %>
+	<tr>
+		<td><%= food_item.name %></td>
+		<td><%= food_item.amount %></td>
+		<td><%= food_item.description %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to 'Home', welcome_index_path %>
