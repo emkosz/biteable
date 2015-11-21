@@ -8,14 +8,18 @@ class FoodItemsController < ApplicationController
 	end
 	
 	def new
+		@food_item = FoodItem.new
 	end
 
 	def create
 		@food_item = FoodItem.new(food_item_params)
-
 		# savin the model in the database
-		@food_item.save!
-		redirect_to @food_item
+		sucsess = @food_item.save
+		if sucsess == true
+			redirect_to @food_item
+		else
+			render :new
+		end
 	end
 
 	private

@@ -5,16 +5,19 @@
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
+    <%= @food_item.errors.full_messages_for(:name) %>
   </p>
 
    <p>
     <%= f.label :amount %><br>
     <%= f.text_field :amount %>
+    <%= @food_item.errors.full_messages_for(:amount) %>
   </p>
 
    <p>
     <%= f.label :description %><br>
     <%= f.text_field :description %>
+    <%= @food_item.errors.full_messages_for(:description) %>
   </p>
  
   <p>
