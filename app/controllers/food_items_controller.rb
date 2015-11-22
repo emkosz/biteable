@@ -22,6 +22,25 @@ class FoodItemsController < ApplicationController
 		end
 	end
 
+	def update
+		@food_item = FoodItem.find(params[:id])
+
+		if @food_item.update(food_item_params)
+			redirect_to food_items_path
+		end
+	end
+
+	def edit
+		@food_item = FoodItem.find(params[:id])
+	end
+
+	def destroy
+		@food_item = FoodItem.find(params[:id])
+		@food_item.destroy
+
+		redirect_to food_items_path
+	end
+
 	private
 		def food_item_params
 			puts params
